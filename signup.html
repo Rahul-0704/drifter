@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(signup.jpg);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+        border:  solid 1px black;
+      backdrop-filter:blur(5px);
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+      border-radius: 50px;
+    }
+
+    .signup-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .signup-container input[type="text"],
+    .signup-container input[type="email"],
+    .signup-container input[type="password"] {
+      width: 100%;
+      padding: 12px 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .signup-container button {
+      width: 50%;
+      padding: 12px;
+      background-color: rgba(68, 76, 197, 0.91); 
+      color: white;
+      
+      border: solid 0.5px black;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .signup-container button:hover {
+      background-color: #145dbf;
+    }
+
+    .signin-link {
+      margin-top: 20px;
+      display: block;
+      color: #1877f2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signin-link:hover {
+      text-decoration: underline;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: -10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <h2>Create Account</h2>
+    <form action="#" id="signup-form">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Create Password" required>
+      <input type="password" id="repeat-password" placeholder="Repeat Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <a href="login.html" class="signin-link">Already have an account?Login</a>
+    <div id="error-message" class="error"></div>
+  </div>
+
+  <script>
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Get form values
+      const password = document.getElementById("password").value;
+      const repeatPassword = document.getElementById("repeat-password").value;
+      
+      const errorMessage = document.getElementById("error-message");
+
+      // Password match validation
+      if (password !== repeatPassword) {
+        errorMessage.textContent = "Passwords do not match!";
+        return;
+      }
+
+      // If no errors, clear the error message and submit form (for now, just log success)
+      errorMessage.textContent = "";
+      alert("Account successfully created!");
+    });
+  </script>
+
+</body>
+</html>

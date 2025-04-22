@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     background-image: url(login.jpg);
+     background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      backdrop-filter: blur(10px);
+      padding: 40px 30px;
+     border:  solid 1px black;
+     
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+      border-radius: 50px
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input[type="password"] {
+  -webkit-text-security: disc; /* Options: 'circle', 'square', 'disc' */
+}
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 12px 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      width: 50%;
+      padding: 12px;
+      background-color: rgba(68, 76, 197, 0.91); 
+      color: white;
+      border: solid 0.5px black;
+      border-radius: 10px;
+      
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: #145dbf;
+    }
+
+    .signup-link {
+      margin-top: 20px;
+      display: block;
+      color: #1877f2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signup-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="#">
+      <input type="text" placeholder="Email or Phone Number" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <a href="signup.html" class="signup-link">Create New Account</a>
+    <a href="forgotpass.html" class="signup-link">Forgot Password</a>
+  </div>
+</body>
+</html>
